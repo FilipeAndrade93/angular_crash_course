@@ -1,6 +1,6 @@
 # HelloWorld
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0. and was developed using the tutorial from the following video: (https://www.youtube.com/watch?v=3dHNOWTI7H8)
 
 ## Development server
 
