@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { TaskItemComponent } from "../task-item/task-item.component";
 import { TaskService } from '../../services/task.service';
 import { Task } from '../../Task';
+import { AddTaskComponent } from '../add-task/add-task.component';
 
 @Component({
     selector: 'app-tasks',
     standalone: true,
     templateUrl: './tasks.component.html',
     styleUrl: './tasks.component.css',
-    imports: [CommonModule, TaskItemComponent]
+    imports: [CommonModule, TaskItemComponent, AddTaskComponent]
 })
 export class TasksComponent implements OnInit {
   tasks: Task[] = [];
@@ -29,6 +30,11 @@ export class TasksComponent implements OnInit {
     task.reminder = !task.reminder
     console.log('toggleReminder reminder value: ', task.reminder)
     this.taskService.updateTaskReminder(task).subscribe()
+  }
+
+  addTask(task: Task) {
+    console.log('task added: ',task)
+    this.taskService.addTask(task).subscribe((task) => (this.tasks.push(task)))
   }
 
 }
